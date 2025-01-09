@@ -1,0 +1,22 @@
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: red;
+  color: white;
+  padding: 10px;
+}
+
+header ul{
+  list-style: none;
+  display: flex;
+}
+
+header ul li{
+  margin-left: 10px; 
+}
+
+.active{
+  
+  border-bottom: 1px solid black; 
+}

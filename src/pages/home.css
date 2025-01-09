@@ -1,0 +1,10 @@
+section{
+  background-color: #777;
+  margin-top:20px ;
+}
+.cards{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
