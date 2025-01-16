@@ -17,6 +17,6 @@ header ul li{
 }
 
 .active{
-  
+  border-block: ;
   border-bottom: 1px solid black; 
 }

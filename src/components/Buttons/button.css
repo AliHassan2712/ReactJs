@@ -1,4 +1,4 @@
-button{
+.buttons{
   padding: 8px;
   color: white;
   background-color: red;
@@ -6,4 +6,4 @@ button{
 
 .activeButton{
   background-color: green;
-}
+} 
