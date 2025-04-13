@@ -1,8 +1,12 @@
-import React from 'react';
-import './Container.css';
+import React from "react";
+import "./container.css"
+class Container extends React.PureComponent{
+    render(){
 
-const Container = ({ children }) => {
-  return <div className="container">{children}</div>;
-};
+        return(
+<div className="container">{this.props.children}</div>
+        )
+    }
+}
 
-export default Container;
+export default Container

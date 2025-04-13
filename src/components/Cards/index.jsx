@@ -1,17 +1,18 @@
-import './card.css'
-import Buttons from '../Buttons'
-const Card =({name,parg,imgSrc,Childern })=>{
-  return(
-    <div className = "card">
-     <p>Name is {name}</p>
-     <div>{parg}</div>
-  
-       {imgSrc ?<img src={imgSrc}/> : '' }
-     {/*imgSrc && <img src={imgSrc}/>*/}
-    
-    <Buttons tittle ="Click" isActive/>
-    </div>
-    )
-} 
+import React from "react";
+import "./cards.css";
+class Cards extends React.Component {
+  render() {
+    const {name , parg , link , rev} = this.props
+    return (
+      <>
+        <div className= {`card ${rev ? "cardrevres" : ""}`}>
+          <span>Name :{name} </span>
+         {link ? <img src={link}></img> : ''}
+          <p>{parg}</p>
+        </div>
+      </>
+    );
+  }
+}
 
-export default Card
+export default Cards;

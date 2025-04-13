@@ -1,14 +1,14 @@
 import Header  from "../components/Header"
 import Footer  from "../components/Footer"
-const Home = ()=>{
+const Aboute = ()=>{
     return(
         <>
         
-        <h2>Home Page</h2>
-       
+        <h2>Aboute Page</h2>
+      
         </>
     )
 
 }
 
-export default Home;
+export default Aboute;

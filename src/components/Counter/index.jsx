@@ -1,48 +1,38 @@
-import React from "react";
 import "./counter.css";
+import React from "react";
+
 class Counter extends React.Component {
-    state = {
-        counter: 0,
-        myInput: ""
-    };
+  state = { count: 0 , myInput : "0"};
 
-    decrement = () => {
-        this.setState(prevState => {
-            if (prevState.counter > 0) {
-                return {
-                    counter: prevState.counter - this.state.myInput
-                };
-            }
-        });
-    };
-    increment = () => {
-        this.setState(prevState => {
-            return { counter: prevState.counter + Number(this.state.myInput) };
-        });
-    };
+  increment = () => {
+    this.setState((prevState) => ({
+      count: prevState.count + Number.parseInt(this.state.myInput),
+    }));
+  };
 
-    changeInput = event => {
-        this.setState({
-            myInput: event.target.value
-        });
-    };
-    render() {
-        return (
-            <>
-                <button className="dec" onClick={this.decrement}>
-                    -
-                </button>
-                <p className="countNum">{this.state.counter}</p>
-                <button className="inc" onClick={this.increment}>
-                    +
-                </button>
-                <hr />
-                <hr />
-                <lable>Number of Incremnt:</lable>
-                <input onChange={this.changeInput} type="text" />
-            </>
-        );
-    }
+  handleInput = (e) => {
+    this.setState((prevState) => ({
+      myInput: e.target.value,
+    }));
+  };
+
+  decrement = () => {
+    this.setState((prevState) => ({
+      count: prevState.count > 0 ? prevState.count - 1 : 0,
+    }));
+  };
+
+  render() {
+    return (
+      <>
+        <button onClick={this.decrement}>-</button>
+        <span>{this.state.count}</span>
+        <button onClick={this.increment}>+</button>
+        <label htmlFor="num">Number Of Increment</label>
+        <input id="num" type="text" onChange={this.handleInput} />
+      </>
+    );
+  }
 }
 
 export default Counter;
