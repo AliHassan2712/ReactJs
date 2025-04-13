@@ -8,6 +8,8 @@ import TestPage from "./pages/TestPage";
 import CounterPage from "./pages/CounterPage";
 import Form from "./pages/Form";
 import Todo from "./pages/Todo";
+import Comp from "./pages/Comp";
+
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -27,12 +29,12 @@ class App extends React.Component {
     }
   }
 
-  logout=()=>{
-    this.setState({isAuth:false})
+  logout = () => {
+    this.setState({ isAuth: false })
     localStorage.removeItem('token')
   }
 
-  onLogin =()=>{
+  onLogin = () => {
     this.setState({ isAuth: true })
   }
   render() {
@@ -46,22 +48,22 @@ class App extends React.Component {
 
           {/* Login Route */}
           <Route
-  path="/login"
-  element={
-    isAuth ? (
-      <Navigate to="/dashboard/home" />
-    ) : (
-      <Form onLogin={this.onLogin} />
-    )
-  }
-/>
+            path="/login"
+            element={
+              isAuth ? (
+                <Navigate to="/dashboard/home" />
+              ) : (
+                <Form onLogin={this.onLogin} />
+              )
+            }
+          />
 
           {/* Protected Routes with Header/Footer */}
           <Route
             path="/dashboard"
             element={
               <>
-               
+
                 <ProtectedRoute isAuth={isAuth} logout={this.logout} />
               </>
             }
@@ -74,6 +76,8 @@ class App extends React.Component {
             <Route path="posts" element={<Posts />} />
             <Route path="post/:id" element={<Post />} />
           </Route>
+
+          <Route path="/comp" element={<Comp />} />
 
           {/* 404 Error Page */}
           <Route path="*" element={<h1>Error Page 404</h1>} />
